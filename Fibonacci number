@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+long long Fibonacci(int F);
+
+int main()
+{
+	while (true)
+	{
+
+		int n;
+		cout << "Enter the index number: " << endl;
+		cin >> n;
+
+		int res;
+		res = Fibonacci(n);
+		cout << "Fibonacci number = " << res << endl;
+		system("pause");
+		system("cls");
+	}
+	return 0;
+}
+
+long long Fibonacci (int n)
+{
+	if (n == 0 || n == 1)
+		return n;
+	int f1 = 0, f2 = 1, F = 0;
+	for (int i = 1; i <= n; i++)
+	{
+		F = f1 + f2;
+		f1 = f2;
+		f2 = F;
+	}
+	return F;
+}
